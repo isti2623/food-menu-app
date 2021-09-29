@@ -10,10 +10,12 @@ import About from './components/About/About';
 import FoodDetails from './components/FoodDetails/FoodDetails';
 import Contact from './components/Contact/Contact';
 import NotFound from './components/NotFound/NotFound';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <Router>
+      <Header></Header>
       <Switch>
         <Route exact path="/home">
           <Home />
