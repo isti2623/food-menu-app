@@ -1,12 +1,12 @@
 import React from 'react';
-import { Container, Nav, Navbar, Stack } from 'react-bootstrap';
+import { Container, Nav, Navbar, Stack, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="/">Food-Menu-App</Navbar.Brand>
+                <Navbar.Brand className="fw-bold fs-2" href="/">Food-Menu-App</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">
@@ -51,6 +51,7 @@ const Header = () => {
                             >
                                 CONTACT
                             </NavLink>
+                            <Button className="fw-bold" variant="warning">Order Now</Button>
                         </Stack>
                     </Nav>
 
