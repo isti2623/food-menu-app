@@ -1,28 +1,35 @@
 import React from 'react';
 import { Card, Col, Row, Button, Container } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 
 const FoodItem = (props) => {
-    const { strMeal, strMealThumb, strInstructions } = props.meal;
+    const { strMeal, strMealThumb, strInstructions, idMeal } = props.meal;
+    //const { idMeal } = console.log(props.meal);
+    //console.log(id);
+
+    const history = useHistory();
+
+    const handleClick = () => {
+        history.push(`/fooddetails/${idMeal}`);
+    }
     return (
 
-        <Container>
-            <Row xs={6} md={4}>
-                <Col >
-                    <Card>
-                        <Card.Img variant="top" src={strMealThumb} />
-                        <Card.Body>
-                            <Card.Title>{strMeal}</Card.Title>
-                            <Card.Text>
-                                {strInstructions.slice(0, 120)}
-                            </Card.Text>
-                        </Card.Body>
-                        <Card.Footer>
-                            <Button className="btn btn-danger">Details</Button>
-                        </Card.Footer>
-                    </Card>
-                </Col>
-            </Row>
-        </Container>
+
+        <Col >
+            <Card>
+                <Card.Img variant="top" src={strMealThumb} />
+                <Card.Body>
+                    <Card.Title>{strMeal}</Card.Title>
+                    <Card.Text>
+                        {strInstructions.slice(0, 120)}
+                    </Card.Text>
+                </Card.Body>
+                <Card.Footer>
+                    <Button onClick={handleClick} className="btn btn-danger">Details</Button>
+                </Card.Footer>
+            </Card>
+        </Col>
+
 
     );
 };

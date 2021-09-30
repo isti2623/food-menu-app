@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FormControl, InputGroup } from 'react-bootstrap';
+import { Container, FormControl, InputGroup, Row } from 'react-bootstrap';
 import FoodItem from '../FoodItem/FoodItem';
 
 const Food = () => {
@@ -28,13 +28,17 @@ const Food = () => {
                     aria-describedby="search"
                 />
             </InputGroup>
-            {
-                meals.map(meal => <FoodItem
-                    key={meal.idMeal}
-                    meal={meal}
-                >
-                </FoodItem>)
-            }
+            <Container>
+                <Row xs={6} md={3}>
+                    {
+                        meals.map(meal => <FoodItem
+                            key={meal.idMeal}
+                            meal={meal}
+                        >
+                        </FoodItem>)
+                    }
+                </Row>
+            </Container>
 
         </div>
     );
