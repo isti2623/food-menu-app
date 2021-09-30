@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Col, Row, Button, Container } from 'react-bootstrap';
+import { Card, Col, Button, } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 
 const FoodItem = (props) => {

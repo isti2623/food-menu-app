@@ -1,32 +1,29 @@
 import React, { useEffect, useState } from 'react';
 
-import { useHistory, useParams } from 'react-router';
+import { useParams } from 'react-router';
+
 
 const FoodDetails = () => {
     const { idMeal } = useParams();
-    console.log(idMeal);
+    //console.log(idMeal);
     const [mealItem, setMealItem] = useState({});
-    const history = useHistory();
+    //const history = useHistory();
 
     useEffect(() => {
-        const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${idMeal}`;
+        const url = `https://www.themealdb.com/api/json/v1/1/lookup.php?i=${idMeal}`;
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setMealItem(data));
+            .then(data => setMealItem(data.meals));
     }, [idMeal]);
 
-    const handleClick = () => {
+    /* const handleClick = () => {
         history.push('/fooddetails');
-    }
+    } */
     return (
         <div>
-            <h3>Food Detail of: {idMeal}</h3>
-            <h1>{mealItem?.strMeal}</h1>
-            <h2>{mealItem?.strCategory}</h2>
-            <h4>{mealItem?.strInstructions}</h4>
-            <p>Works at: {mealItem?.strMealThumb}</p>
-            <button onClick={handleClick}>See All Friends</button>
+            <h1>Id number : {idMeal}</h1>
+            <h3>Name : {mealItem?.strMeal}</h3>
         </div>
     );
 };

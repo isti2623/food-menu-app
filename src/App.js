@@ -23,7 +23,7 @@ function App() {
         <Route exact path="/food">
           <Food />
         </Route>
-        <Route exact path="/fooddetails/:id">
+        <Route exact path="/fooddetails/:idMeal">
           <FoodDetails />
         </Route>
         <Route exact path="/contact">
