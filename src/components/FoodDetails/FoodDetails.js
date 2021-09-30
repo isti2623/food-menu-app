@@ -7,7 +7,7 @@ import { useParams } from 'react-router';
 const FoodDetails = () => {
     const { idMeal } = useParams();
     //console.log(idMeal);
-    const [mealItem, setMealItem] = useState({});
+    const [mealItem, setMealItem] = useState([]);
     //const history = useHistory();
 
     useEffect(() => {
@@ -37,7 +37,7 @@ const FoodDetails = () => {
                             <h2 className=" text-dark mt-5"> <span className="text-warning">Area:</span>  {mealItem.strArea}</h2>
                             <Row md={6}>
                                 <Col>
-                                    <Button className="fw-bold" variant="warning">Order Now</Button>
+                                    <Button onClick="handleCart" className="fw-bold" variant="warning">Order Now</Button>
                                 </Col>
                                 <Col>
                                     <Button className="fw-bold" variant="warning">All Menus</Button>

@@ -29,9 +29,10 @@ const Food = () => {
                 />
             </InputGroup>
             <Container>
-                <Row xs={6} md={3}>
+                <Row xs={12} md={3}>
                     {
-                        meals.map(meal => <FoodItem
+                        meals && meals.map(meal => <FoodItem
+
                             key={meal.idMeal}
                             meal={meal}
                         >
