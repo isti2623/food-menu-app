@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Col, Container, Row, Button } from 'react-bootstrap';
 
 import { useParams } from 'react-router';
 
@@ -14,16 +15,42 @@ const FoodDetails = () => {
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setMealItem(data.meals));
-    }, [idMeal]);
+            .then(data => setMealItem(data?.meals[0]));
+    }
+        , [idMeal]);
 
     /* const handleClick = () => {
         history.push('/fooddetails');
     } */
     return (
         <div>
-            <h1>Id number : {idMeal}</h1>
-            <h3>Name : {mealItem?.strMeal}</h3>
+            <Container>
+                <Row>
+                    <Col md={6}>
+                        <img className="mt-5 img-fluid" src={mealItem.strMealThumb} alt="" srcset="" />
+                    </Col>
+                    <Col md={6}>
+                        <div className="ms-5 mt-5" >
+                            <h1 className="fw-bold text-warning mt-5"><span className="text-dark">Name:</span> {mealItem.strMeal}</h1>
+                            <hr />
+                            <h4 className=" text-dark mt-5"> <span className="text-warning">Instruction:</span>  {mealItem.strInstructions}</h4>
+                            <h2 className=" text-dark mt-5"> <span className="text-warning">Area:</span>  {mealItem.strArea}</h2>
+                            <Row md={6}>
+                                <Col>
+                                    <Button className="fw-bold" variant="warning">Order Now</Button>
+                                </Col>
+                                <Col>
+                                    <Button className="fw-bold" variant="warning">All Menus</Button>
+                                </Col>
+                            </Row>
+
+
+
+                        </div>
+
+                    </Col>
+                </Row>
+            </Container>
         </div>
     );
 };
