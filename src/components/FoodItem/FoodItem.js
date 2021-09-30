@@ -25,7 +25,7 @@ const FoodItem = (props) => {
                     </Card.Text>
                 </Card.Body>
                 <Card.Footer>
-                    <Button onClick={handleClick} className="btn btn-danger">Details</Button>
+                    <Button onClick={handleClick} className="btn btn-warning fw-bold">Details</Button>
                 </Card.Footer>
             </Card>
         </Col>

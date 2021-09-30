@@ -18,7 +18,7 @@ const Food = () => {
     }
     return (
         <div>
-            <h2 className="text-danger text-center fw-bold fs-1">Food Menu Here</h2>
+            <h2 className="text-warning text-center fw-bold fs-1">Food Menu Here</h2>
             <hr className="w-25 mx-auto" />
             <InputGroup className="mb-3 mx-auto w-50 mt-4">
                 <FormControl
